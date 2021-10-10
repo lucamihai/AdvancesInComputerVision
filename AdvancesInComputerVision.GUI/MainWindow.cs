@@ -64,7 +64,9 @@ namespace AdvancesInComputerVision.GUI
 
         private void ButtonGrayscaleClick(object sender, EventArgs e)
         {
+            backupAlteredImage = new Bitmap(pictureBoxAlteredImage.BackgroundImage);
 
+            pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.AsGrayscale();
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
