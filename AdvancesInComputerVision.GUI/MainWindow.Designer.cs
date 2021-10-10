@@ -1,7 +1,7 @@
 ﻿
 namespace AdvancesInComputerVision.GUI
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         ///  Required designer variable.
@@ -152,7 +152,7 @@ namespace AdvancesInComputerVision.GUI
             this.buttonGrayscale.UseVisualStyleBackColor = true;
             this.buttonGrayscale.Click += new System.EventHandler(this.ButtonGrayscaleClick);
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,8 +168,8 @@ namespace AdvancesInComputerVision.GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxAlteredImage);
             this.Controls.Add(this.pictureBoxOriginalImage);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainWindow";
+            this.Text = "MainWindow";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOriginalImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAlteredImage)).EndInit();
             this.ResumeLayout(false);
