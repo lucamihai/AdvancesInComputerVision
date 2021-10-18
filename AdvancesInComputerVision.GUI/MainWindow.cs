@@ -34,6 +34,8 @@ namespace AdvancesInComputerVision.GUI
             cropSelectionIsEnabled = false;
         }
 
+        #region Initial and altered images initialization
+
         private void ButtonLoadOriginalImageClick(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
@@ -66,19 +68,9 @@ namespace AdvancesInComputerVision.GUI
             pictureBoxAlteredImage.BackgroundImage = new Bitmap(backupAlteredImage);
         }
 
-        private void ButtonCropClick(object sender, EventArgs e)
-        {
-            backupAlteredImage = new Bitmap(pictureBoxAlteredImage.BackgroundImage);
+        #endregion
 
-            pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.Crop(cropStart, cropEnd);
-        }
-
-        private void ButtonGrayscaleClick(object sender, EventArgs e)
-        {
-            backupAlteredImage = new Bitmap(pictureBoxAlteredImage.BackgroundImage);
-
-            pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.AsGrayscale();
-        }
+        #region Original image events
 
         private void PictureBoxOriginalImageMouseDown(object sender, MouseEventArgs e)
         {
@@ -126,7 +118,7 @@ namespace AdvancesInComputerVision.GUI
 
                 cropSelectionX = newStartX;
                 cropSelectionY = newStartY;
-                
+
             }
             else
             {
@@ -151,6 +143,17 @@ namespace AdvancesInComputerVision.GUI
 
             pictureBoxOriginalImage.Refresh();
             pictureBoxOriginalImage.CreateGraphics().DrawRectangle(cropPen, cropStart.X, cropStart.Y, cropWidth, cropHeight);
+        }
+
+        #endregion
+
+        #region Cropping
+
+        private void ButtonCropClick(object sender, EventArgs e)
+        {
+            backupAlteredImage = new Bitmap(pictureBoxAlteredImage.BackgroundImage);
+
+            pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.Crop(cropStart, cropEnd);
         }
 
         private void buttonBeginCropSelection_Click(object sender, EventArgs e)
@@ -188,8 +191,6 @@ namespace AdvancesInComputerVision.GUI
             pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.Crop(start, end);
         }
 
-        
-
         private void numericUpDownCropSelectionX_ValueChanged(object sender, EventArgs e)
         {
             cropSelectionX = (int)numericUpDownCropSelectionX.Value;
@@ -225,5 +226,19 @@ namespace AdvancesInComputerVision.GUI
             pictureBoxOriginalImage.Refresh();
             pictureBoxOriginalImage.CreateGraphics().DrawRectangle(cropPen, cropSelectionX, cropSelectionY, cropSelectionSize, cropSelectionSize);
         }
+
+        #endregion
+
+        #region Effects
+
+        private void ButtonGrayscaleClick(object sender, EventArgs e)
+        {
+            backupAlteredImage = new Bitmap(pictureBoxAlteredImage.BackgroundImage);
+
+            pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.AsGrayscale();
+        }
+
+        #endregion
+        
     }
 }
