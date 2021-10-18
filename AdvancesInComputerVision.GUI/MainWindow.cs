@@ -156,7 +156,7 @@ namespace AdvancesInComputerVision.GUI
             pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.Crop(cropStart, cropEnd);
         }
 
-        private void buttonBeginCropSelection_Click(object sender, EventArgs e)
+        private void ButtonBeginCropSelectionClick(object sender, EventArgs e)
         {
             cropSelectionIsEnabled = true;
 
@@ -179,7 +179,7 @@ namespace AdvancesInComputerVision.GUI
             DrawCropSelectionRectangle();
         }
 
-        private void buttonCropSelection_Click(object sender, EventArgs e)
+        private void ButtonCropSelectionClick(object sender, EventArgs e)
         {
             var endX = cropSelectionX + cropSelectionSize;
             var endY = cropSelectionY + cropSelectionSize;
@@ -191,21 +191,21 @@ namespace AdvancesInComputerVision.GUI
             pictureBoxAlteredImage.BackgroundImage = pictureBoxOriginalImage.BackgroundImage.Crop(start, end);
         }
 
-        private void numericUpDownCropSelectionX_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCropSelectionXValueChanged(object sender, EventArgs e)
         {
             cropSelectionX = (int)numericUpDownCropSelectionX.Value;
 
             DrawCropSelectionRectangle();
         }
 
-        private void numericUpDownCropSelectionY_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCropSelectionYValueChanged(object sender, EventArgs e)
         {
             cropSelectionY = (int)numericUpDownCropSelectionY.Value;
 
             DrawCropSelectionRectangle();
         }
 
-        private void numericUpDownCropSelectionSize_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCropSelectionSizeValueChanged(object sender, EventArgs e)
         {
             var newSize = (int)numericUpDownCropSelectionSize.Value;
             var imageWidth = pictureBoxOriginalImage.BackgroundImage.Width;

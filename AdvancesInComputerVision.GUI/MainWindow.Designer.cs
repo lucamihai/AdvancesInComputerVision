@@ -173,7 +173,7 @@ namespace AdvancesInComputerVision.GUI
             this.buttonBeginCropSelection.TabIndex = 10;
             this.buttonBeginCropSelection.Text = "Start";
             this.buttonBeginCropSelection.UseVisualStyleBackColor = true;
-            this.buttonBeginCropSelection.Click += new System.EventHandler(this.buttonBeginCropSelection_Click);
+            this.buttonBeginCropSelection.Click += new System.EventHandler(this.ButtonBeginCropSelectionClick);
             // 
             // numericUpDownCropSelectionX
             // 
@@ -181,7 +181,7 @@ namespace AdvancesInComputerVision.GUI
             this.numericUpDownCropSelectionX.Name = "numericUpDownCropSelectionX";
             this.numericUpDownCropSelectionX.Size = new System.Drawing.Size(84, 23);
             this.numericUpDownCropSelectionX.TabIndex = 11;
-            this.numericUpDownCropSelectionX.ValueChanged += new System.EventHandler(this.numericUpDownCropSelectionX_ValueChanged);
+            this.numericUpDownCropSelectionX.ValueChanged += new System.EventHandler(this.NumericUpDownCropSelectionXValueChanged);
             // 
             // numericUpDownCropSelectionY
             // 
@@ -189,7 +189,7 @@ namespace AdvancesInComputerVision.GUI
             this.numericUpDownCropSelectionY.Name = "numericUpDownCropSelectionY";
             this.numericUpDownCropSelectionY.Size = new System.Drawing.Size(84, 23);
             this.numericUpDownCropSelectionY.TabIndex = 12;
-            this.numericUpDownCropSelectionY.ValueChanged += new System.EventHandler(this.numericUpDownCropSelectionY_ValueChanged);
+            this.numericUpDownCropSelectionY.ValueChanged += new System.EventHandler(this.NumericUpDownCropSelectionYValueChanged);
             // 
             // numericUpDownCropSelectionSize
             // 
@@ -197,7 +197,7 @@ namespace AdvancesInComputerVision.GUI
             this.numericUpDownCropSelectionSize.Name = "numericUpDownCropSelectionSize";
             this.numericUpDownCropSelectionSize.Size = new System.Drawing.Size(84, 23);
             this.numericUpDownCropSelectionSize.TabIndex = 13;
-            this.numericUpDownCropSelectionSize.ValueChanged += new System.EventHandler(this.numericUpDownCropSelectionSize_ValueChanged);
+            this.numericUpDownCropSelectionSize.ValueChanged += new System.EventHandler(this.NumericUpDownCropSelectionSizeValueChanged);
             // 
             // label3
             // 
@@ -248,7 +248,7 @@ namespace AdvancesInComputerVision.GUI
             this.buttonCropSelection.TabIndex = 18;
             this.buttonCropSelection.Text = "Crop";
             this.buttonCropSelection.UseVisualStyleBackColor = true;
-            this.buttonCropSelection.Click += new System.EventHandler(this.buttonCropSelection_Click);
+            this.buttonCropSelection.Click += new System.EventHandler(this.ButtonCropSelectionClick);
             // 
             // MainWindow
             // 
