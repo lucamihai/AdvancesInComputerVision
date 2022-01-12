@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace AdvancesInComputerVision.GUI.UserControls
@@ -10,6 +11,8 @@ namespace AdvancesInComputerVision.GUI.UserControls
         private readonly Pen pen;
 
         private Graphics graphicsImageBefore;
+
+        private Region shapeRegion;
 
         public ImageInPaintingUserControl()
         {
@@ -69,8 +72,49 @@ namespace AdvancesInComputerVision.GUI.UserControls
 
         private void buttonCloseShape_Click(object sender, System.EventArgs e)
         {
+            var graphicsPath = new GraphicsPath();
+            graphicsPath.AddLines(clickedPoints.ToArray());
+            shapeRegion = new Region(graphicsPath);
+
             graphicsImageBefore.DrawLine(pen, clickedPoints[^1], clickedPoints[0]);
             buttonCloseShape.Enabled = false;
+        }
+
+        private void buttonHighlightSelection_Click(object sender, System.EventArgs e)
+        {
+            var highlightImage = new Bitmap(pictureBoxImageAfter.BackgroundImage);
+
+            for (var x = 0; x < pictureBoxImageBefore.BackgroundImage.Width; x++)
+            {
+                for (var y = 0; y < pictureBoxImageBefore.BackgroundImage.Height; y++)
+                {
+                    if (!shapeRegion.IsVisible(new Point(x, y)))
+                    {
+                        var pixel = highlightImage.GetPixel(x, y);
+                        var grayScaleValue = Clamp((pixel.R + pixel.G + pixel.B) / 3);
+                        var grayScale = Color.FromArgb(grayScaleValue, grayScaleValue, grayScaleValue);
+                        highlightImage.SetPixel(x, y, grayScale);
+                    }
+                }
+            }
+
+            pictureBoxImageAfter.BackgroundImage = highlightImage;
+        }
+
+        private byte Clamp(int value)
+        {
+            if (value < 0)
+            {
+                return 0;
+            }
+            else if (value > 255)
+            {
+                return 255;
+            }
+            else
+            {
+                return (byte)value;
+            }
         }
     }
 }

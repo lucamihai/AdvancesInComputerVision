@@ -35,6 +35,7 @@ namespace AdvancesInComputerVision.GUI.UserControls
             this.buttonInPainting = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.buttonCloseShape = new System.Windows.Forms.Button();
+            this.buttonHighlightSelection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageBefore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageAfter)).BeginInit();
             this.SuspendLayout();
@@ -101,11 +102,23 @@ namespace AdvancesInComputerVision.GUI.UserControls
             this.buttonCloseShape.UseVisualStyleBackColor = true;
             this.buttonCloseShape.Click += new System.EventHandler(this.buttonCloseShape_Click);
             // 
+            // buttonHighlightSelection
+            // 
+            this.buttonHighlightSelection.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonHighlightSelection.Location = new System.Drawing.Point(414, 42);
+            this.buttonHighlightSelection.Name = "buttonHighlightSelection";
+            this.buttonHighlightSelection.Size = new System.Drawing.Size(76, 29);
+            this.buttonHighlightSelection.TabIndex = 10;
+            this.buttonHighlightSelection.Text = "Highlight";
+            this.buttonHighlightSelection.UseVisualStyleBackColor = true;
+            this.buttonHighlightSelection.Click += new System.EventHandler(this.buttonHighlightSelection_Click);
+            // 
             // ImageInPaintingUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.buttonHighlightSelection);
             this.Controls.Add(this.buttonCloseShape);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonInPainting);
@@ -128,5 +141,6 @@ namespace AdvancesInComputerVision.GUI.UserControls
         private System.Windows.Forms.Button buttonInPainting;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Button buttonCloseShape;
+        private System.Windows.Forms.Button buttonHighlightSelection;
     }
 }
