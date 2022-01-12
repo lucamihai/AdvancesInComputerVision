@@ -15,6 +15,8 @@ namespace AdvancesInComputerVision.GUI.UserControls
         {
             InitializeComponent();
 
+            buttonCloseShape.Enabled = false;
+
             clickedPoints = new List<Point>();
             pen = new Pen(Color.GreenYellow, 2f);
         }
@@ -46,6 +48,11 @@ namespace AdvancesInComputerVision.GUI.UserControls
             clickedPoints.Add(e.Location);
 
             DrawLastTwoPoints();
+
+            if (clickedPoints.Count > 2)
+            {
+                buttonCloseShape.Enabled = true;
+            }
         }
 
         private void DrawLastTwoPoints()
@@ -58,6 +65,12 @@ namespace AdvancesInComputerVision.GUI.UserControls
             var lastPointIndex = clickedPoints.Count - 1;
             
             graphicsImageBefore.DrawLine(pen, clickedPoints[lastPointIndex], clickedPoints[lastPointIndex - 1]);
+        }
+
+        private void buttonCloseShape_Click(object sender, System.EventArgs e)
+        {
+            graphicsImageBefore.DrawLine(pen, clickedPoints[^1], clickedPoints[0]);
+            buttonCloseShape.Enabled = false;
         }
     }
 }

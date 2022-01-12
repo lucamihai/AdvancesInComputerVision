@@ -34,6 +34,7 @@ namespace AdvancesInComputerVision.GUI.UserControls
             this.buttonLoadImage = new System.Windows.Forms.Button();
             this.buttonInPainting = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonCloseShape = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageBefore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageAfter)).BeginInit();
             this.SuspendLayout();
@@ -89,11 +90,23 @@ namespace AdvancesInComputerVision.GUI.UserControls
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // buttonCloseShape
+            // 
+            this.buttonCloseShape.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCloseShape.Location = new System.Drawing.Point(496, 42);
+            this.buttonCloseShape.Name = "buttonCloseShape";
+            this.buttonCloseShape.Size = new System.Drawing.Size(96, 29);
+            this.buttonCloseShape.TabIndex = 9;
+            this.buttonCloseShape.Text = "Close Shape";
+            this.buttonCloseShape.UseVisualStyleBackColor = true;
+            this.buttonCloseShape.Click += new System.EventHandler(this.buttonCloseShape_Click);
+            // 
             // ImageInPaintingUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.buttonCloseShape);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonInPainting);
             this.Controls.Add(this.buttonLoadImage);
@@ -114,5 +127,6 @@ namespace AdvancesInComputerVision.GUI.UserControls
         private System.Windows.Forms.Button buttonLoadImage;
         private System.Windows.Forms.Button buttonInPainting;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Button buttonCloseShape;
     }
 }
